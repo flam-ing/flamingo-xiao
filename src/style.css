@@ -1,0 +1,343 @@
+[hidden] {
+  display: none !important;
+}
+
+@font-face {
+  font-family: Galmuri;
+  src: url("galmuri/dist/Galmuri11.woff2") format("woff2");
+  font-display: swap;
+}
+:root {
+  font-family: Galmuri, monospace;
+  background: #38393d;
+  color: #e7e7dd;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background: repeating-linear-gradient(0deg, #38393d 0 3px, #343539 3px 4px);
+}
+.player-shell {
+  width: min(1220px, calc((100svh - 118px) * 1200 / 675 + 20px));
+  max-width: 100%;
+  padding: 8px 10px 6px;
+  background: #6a6b68;
+  border: 2px solid;
+  border-color: #aeb0a7 #25282b #25282b #b5b8ae;
+  box-shadow: 0 8px 20px #18191b88;
+}
+header {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+h1 {
+  font-size: 13px;
+  color: #f1f1e9;
+  margin: 0;
+  letter-spacing: 1px;
+}
+h1 span {
+  font-size: 11px;
+  letter-spacing: 0;
+  color: #e7cf77;
+}
+nav {
+  display: flex;
+  gap: 5px;
+}
+button {
+  font: inherit;
+  font-size: 11px;
+  border: 2px solid;
+  border-color: #d9dcd1 #333836 #333836 #d9dcd1;
+  background: #b8bbb1;
+  color: #171d1b;
+  padding: 6px 11px;
+  cursor: pointer;
+  border-radius: 0;
+}
+button:hover {
+  background: #d6d7ca;
+}
+button:active {
+  border-color: #333836 #d9dcd1 #d9dcd1 #333836;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+button:focus-visible,
+canvas:focus-visible {
+  outline: 3px solid #e8cf46;
+  outline-offset: 1px;
+}
+button[aria-pressed="true"] {
+  background: #ead565;
+}
+.stage {
+  position: relative;
+  aspect-ratio: 16/9;
+  border: 2px solid #292e2d;
+  overflow: hidden;
+  background: #726758;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+.window {
+  position: absolute;
+  background: #d0d0c2;
+  color: #22281f;
+  border: 3px solid;
+  border-color: #ececdf #454941 #454941 #ececdf;
+  box-shadow: 7px 7px 0 #1c1e2966;
+}
+.window[hidden] {
+  display: none;
+}
+.window-bar {
+  font-size: 11px;
+  background: #234c65;
+  color: #eee;
+  min-height: 24px;
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.window-bar span {
+  font-size: 9px;
+}
+.window-body {
+  padding: 24px;
+}
+.title-window {
+  left: 5%;
+  top: 14%;
+  width: 38%;
+  transform: rotate(-0.8deg);
+}
+.ink-logo {
+  font-family: serif;
+  font-size: 66px;
+  font-weight: bold;
+  color: #171b1d;
+  line-height: 0.95;
+  transform: skew(-12deg);
+}
+.ink-logo span {
+  font-family: Galmuri, monospace;
+  font-size: 13px;
+  letter-spacing: 5px;
+  display: block;
+  margin-top: 11px;
+  transform: skew(12deg);
+}
+.window h2 {
+  font-size: 25px;
+  margin: 18px 0 13px;
+}
+.window p {
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 12px 0 20px;
+}
+.window button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 13px;
+  padding: 9px;
+}
+.window .start-button {
+  background: #ead04f;
+  border-color: #fff29c #776223 #776223 #fff29c;
+  font-weight: bold;
+}
+.window small {
+  display: block;
+  font-size: 9px;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+.modal {
+  left: 28%;
+  top: 17%;
+  width: 44%;
+  text-align: center;
+}
+.modal h2 {
+  font-size: 23px;
+}
+.modal p {
+  font-size: 12px;
+}
+.modal .window-body {
+  padding: 20px;
+}
+.modal button {
+  margin: 10px auto;
+  max-width: 300px;
+}
+footer {
+  height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.pad,
+.action-pad {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.pad button {
+  padding: 7px 10px;
+}
+.pad > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pad > div button {
+  padding: 1px 10px;
+}
+.action-pad button {
+  height: 38px;
+  min-width: 73px;
+}
+.action-pad b {
+  color: #923737;
+}
+#status {
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  color: #fbf8df;
+  max-width: 480px;
+}
+@media (max-width: 650px) {
+  .player-shell {
+    width: 100%;
+    padding: 4px;
+    border: 0;
+  }
+  header {
+    height: 48px;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-content: center;
+  }
+  h1 {
+    font-size: 10px;
+  }
+  h1 span {
+    font-size: 8px;
+  }
+  nav button {
+    font-size: 8px;
+    padding: 4px 6px;
+  }
+  .title-window {
+    width: 51%;
+    left: 4%;
+    top: 7%;
+  }
+  .window-bar {
+    font-size: 7px;
+    min-height: 14px;
+    padding: 3px;
+  }
+  .window-bar span {
+    display: none;
+  }
+  .window-body {
+    padding: 9px;
+  }
+  .ink-logo {
+    font-size: 29px;
+  }
+  .ink-logo span {
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+  .window h2 {
+    font-size: 13px;
+    margin: 7px 0;
+  }
+  .window p {
+    font-size: 8px;
+    line-height: 1.5;
+    margin: 5px 0 8px;
+  }
+  .window button {
+    font-size: 8px;
+    padding: 4px;
+    margin: 5px 0;
+  }
+  .window small {
+    font-size: 6px;
+    margin-top: 6px;
+  }
+  .modal {
+    left: 12%;
+    top: 5%;
+    width: 76%;
+  }
+  .modal .window-body {
+    padding: 8px;
+  }
+  .modal h2 {
+    font-size: 13px;
+  }
+  .modal p {
+    font-size: 8px;
+  }
+  .modal button {
+    margin: 6px auto;
+  }
+  footer {
+    height: 65px;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+  .pad {
+    gap: 2px;
+  }
+  .pad button {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+  .pad > div button {
+    padding: 0 8px;
+  }
+  .action-pad {
+    gap: 2px;
+  }
+  .action-pad button {
+    min-width: 45px;
+    height: 34px;
+    font-size: 8px;
+    padding: 4px;
+  }
+  #status {
+    order: 3;
+    font-size: 8px;
+    width: 100%;
+    max-width: none;
+  }
+}
