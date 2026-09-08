@@ -288,7 +288,7 @@ async function loadImage(name) {
     const i = new Image();
     i.onload = () => resolve([name, i]);
     i.onerror = reject;
-    i.src = `/art/${name}.png`;
+    i.src = `./art/${name}.png`;
   });
 }
 Promise.all([...AREAS.map((a) => loadImage(a.art)), document.fonts.ready])
